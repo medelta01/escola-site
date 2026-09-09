@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('preload');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETE Luiz Alves Lacerda — Notícias</title>
+  <meta name="description" content="Fique por dentro das últimas notícias da ETE Luiz Alves Lacerda.">
+
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase-config.js" defer></script>
+  <script src="js/session.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header" data-header>
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="ETE Luiz Alves Lacerda">
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Início</a></li>
+          <li><a href="cursos.html" class="nav__link">Cursos</a></li>
+          <li><a href="noticias.html" class="nav__link is-active">Notícias</a></li>
+          <li><a href="contato.html" class="nav__link">Contato</a></li>
+          <li id="nav-admin" style="display:none"><a href="admin.html" class="nav__link">Painel</a></li>
+          <li id="nav-auth"><a href="login.html" class="nav__link">Entrar</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav__toggle" aria-label="Abrir menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Notícias</h1>
+        <p class="page-hero__subtitle">Acompanhe as novidades, eventos e conquistas da nossa escola.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="news-featured" data-reveal>
+          <div class="news-featured__image">
+           <img src="assets/img/noticia-vereador.jpg" alt="Alunas da ETE Luiz Alves Lacerda entrevistam o vereador Paulo Farias do Monte" style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius);">
+          </div>
+          <div class="news-featured__content">
+           <span class="news-card__date">01 de Setembro, 2026</span>
+           <h2 class="news-featured__title">Alunas entrevistam vereador em trabalho de Filosofia e Sociologia</h2>
+           <p class="news-featured__desc">Como parte de um projeto interdisciplinar das disciplinas de Filosofia e Sociologia, alunas da ETE Luiz Alves Lacerda conduziram uma entrevista com o vereador Paulo Farias do Monte, abordando temas como desigualdade social e concentração de renda. A atividade proporcionou aos estudantes a oportunidade de aplicar, em um diálogo direto com a gestão pública municipal, os conceitos discutidos em sala de aula.</p>
+           <a href="#" class="course-card__link">Ler notícia completa →</a>
+          </div>
+</article>
+
+        <div class="grid grid--3" style="margin-top: var(--space-lg);">
+
+          <article class="news-card" data-reveal>
+            <div class="news-card__image"></div>
+            <span class="news-card__date">28 de Agosto, 2026</span>
+            <h3 class="news-card__title">Título da notícia 2</h3>
+          </article>
+
+          <article class="news-card" data-reveal>
+            <div class="news-card__image"></div>
+            <span class="news-card__date">20 de Agosto, 2026</span>
+            <h3 class="news-card__title">Título da notícia 3</h3>
+          </article>
+
+          <article class="news-card" data-reveal>
+            <div class="news-card__image"></div>
+            <span class="news-card__date">15 de Agosto, 2026</span>
+            <h3 class="news-card__title">Título da notícia 4</h3>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>&copy; <span data-year></span> ETE Luiz Alves Lacerda. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

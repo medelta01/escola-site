@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('preload');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETE Luiz Alves Lacerda — Meu Perfil</title>
+  <meta name="description" content="Gerencie seu perfil na ETE Luiz Alves Lacerda.">
+
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase-config.js" defer></script>
+  <script src="js/session.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header" data-header>
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="ETE Luiz Alves Lacerda">
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Início</a></li>
+          <li><a href="cursos.html" class="nav__link">Cursos</a></li>
+          <li><a href="noticias.html" class="nav__link">Notícias</a></li>
+          <li><a href="contato.html" class="nav__link">Contato</a></li>
+          <li id="nav-admin" style="display:none"><a href="admin.html" class="nav__link">Painel</a></li>
+          <li id="nav-auth"><a href="login.html" class="nav__link">Entrar</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav__toggle" aria-label="Abrir menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Meu Perfil</h1>
+        <p class="page-hero__subtitle">Veja e gerencie suas informações pessoais.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="profile-card" data-reveal>
+
+          <!-- ===== MODO VISUALIZAÇÃO ===== -->
+          <div id="profile-view">
+            <div class="profile-header">
+            <img src="assets/img/avatar-placeholder.png" alt="Foto de perfil" class="profile-avatar profile-avatar--clickable" id="avatar-view">
+            <div class="profile-header__info">
+            <h2 id="apelido-view"></h2>
+            <div class="profile-header__meta">
+            <span class="profile-badge" id="profile-badge"></span>
+            <p class="profile-username" id="username-view"></p>
+          </div>
+        </div>
+      </div>
+
+  <p class="profile-bio" id="bio-view"></p>
+  <p class="auth-hint" id="profile-status-hint" style="display:none;"></p>
+  <p class="auth-success" id="profile-sucesso-view"></p>
+  <button class="btn btn--primary" id="btn-editar">Editar perfil</button>
+</div>
+          <!-- ===== MODO EDIÇÃO ===== -->
+          <div id="profile-edit" style="display:none;">
+            <div class="profile-avatar-area">
+              <img src="assets/img/avatar-placeholder.png" alt="Foto de perfil" class="profile-avatar profile-avatar--clickable" id="avatar-preview">
+              <label for="avatar-input" class="btn btn--primary profile-avatar-btn">Trocar foto</label>
+              <input type="file" id="avatar-input" accept="image/*" hidden>
+            </div>
+
+            <form id="form-perfil" novalidate>
+              <div class="form-field">
+                <label for="perfil-username">Usuário</label>
+                <input type="text" id="perfil-username" disabled>
+              </div>
+
+              <div class="form-field">
+                <label for="perfil-apelido">Nome de exibição</label>
+                <input type="text" id="perfil-apelido" required>
+              </div>
+
+              <div class="form-field">
+                <label for="perfil-bio">Bio</label>
+                <textarea id="perfil-bio" rows="4" placeholder="Fale um pouco sobre você..."></textarea>
+              </div>
+
+              <p class="auth-error" id="perfil-erro"></p>
+              <p class="auth-success" id="perfil-sucesso"></p>
+
+              <div class="profile-edit-actions">
+                <button type="button" class="btn btn--ghost" id="btn-cancelar">Cancelar</button>
+                <button type="submit" class="btn btn--primary">Salvar alterações</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== LIGHTBOX DA FOTO ===== -->
+  <div class="avatar-lightbox" id="avatar-lightbox">
+    <img src="" alt="Foto de perfil ampliada" id="avatar-lightbox-img">
+  </div>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>&copy; <span data-year></span> ETE Luiz Alves Lacerda. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/perfil.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

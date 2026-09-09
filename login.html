@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('preload');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETE Luiz Alves Lacerda — Entrar</title>
+  <meta name="description" content="Acesse sua conta na ETE Luiz Alves Lacerda.">
+
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase-config.js" defer></script>
+  <script src="js/session.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header" data-header>
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="ETE Luiz Alves Lacerda">
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Início</a></li>
+          <li><a href="cursos.html" class="nav__link">Cursos</a></li>
+          <li><a href="noticias.html" class="nav__link">Notícias</a></li>
+          <li><a href="contato.html" class="nav__link">Contato</a></li>
+          <li id="nav-admin" style="display:none"><a href="admin.html" class="nav__link">Painel</a></li>
+          <li id="nav-auth"><a href="login.html" class="nav__link">Entrar</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav__toggle" aria-label="Abrir menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="auth-section">
+      <div class="auth-card" data-reveal>
+
+        <div class="auth-tabs">
+          <button class="auth-tab is-active" data-tab="login">Entrar</button>
+          <button class="auth-tab" data-tab="cadastro">Criar conta</button>
+        </div>
+
+        <!-- ===== FORMULÁRIO DE LOGIN (universal — o sistema já sabe o tipo) ===== -->
+        <form class="auth-form is-active" id="form-login" novalidate>
+          <div class="form-field">
+            <label for="login-email">E-mail</label>
+            <input type="email" id="login-email" required>
+          </div>
+
+          <div class="form-field">
+            <label for="login-senha">Senha</label>
+            <input type="password" id="login-senha" required>
+          </div>
+
+          <p class="auth-error" id="login-erro"></p>
+
+          <button type="submit" class="btn btn--primary auth-submit">Entrar</button>
+        </form>
+
+        <!-- ===== FORMULÁRIO DE CADASTRO (Aluno ou Professor) ===== -->
+        <form class="auth-form" id="form-cadastro" novalidate>
+          <div class="form-field">
+            <label for="cad-tipo">Tipo de conta</label>
+            <select id="cad-tipo">
+              <option value="aluno">Aluno</option>
+              <option value="professor">Professor</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="cad-username">Usuário</label>
+            <input type="text" id="cad-username" placeholder="ex: joao.silva" required>
+          </div>
+
+          <div class="form-field">
+            <label for="cad-apelido">Nome de exibição</label>
+            <input type="text" id="cad-apelido" placeholder="ex: João Silva" required>
+          </div>
+
+          <div class="form-field">
+            <label for="cad-email">E-mail</label>
+            <input type="email" id="cad-email" required>
+          </div>
+
+          <div class="form-field">
+            <label for="cad-senha">Senha</label>
+            <input type="password" id="cad-senha" minlength="6" required>
+          </div>
+
+          <div class="form-field">
+            <label for="cad-confirmar">Confirmar senha</label>
+            <input type="password" id="cad-confirmar" minlength="6" required>
+          </div>
+
+          <p class="auth-hint" id="cadastro-hint">Contas de gestão são criadas apenas pela administração da escola.</p>
+
+          <p class="auth-error" id="cadastro-erro"></p>
+          <p class="auth-success" id="cadastro-sucesso"></p>
+
+          <button type="submit" class="btn btn--primary auth-submit">Criar conta</button>
+        </form>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>&copy; <span data-year></span> ETE Luiz Alves Lacerda. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/auth.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

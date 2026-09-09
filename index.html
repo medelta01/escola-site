@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('preload');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETE Luiz Alves Lacerda — Início</title>
+  <meta name="description" content="Site institucional da ETE Luiz Alves Lacerda.">
+
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase-config.js" defer></script>
+  <script src="js/session.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header" data-header>
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="ETE Luiz Alves Lacerda">
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link is-active">Início</a></li>
+          <li><a href="cursos.html" class="nav__link">Cursos</a></li>
+          <li><a href="noticias.html" class="nav__link">Notícias</a></li>
+          <li><a href="contato.html" class="nav__link">Contato</a></li>
+          <li id="nav-admin" style="display:none"><a href="admin.html" class="nav__link">Painel</a></li>
+          <li id="nav-auth"><a href="login.html" class="nav__link">Entrar</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav__toggle" aria-label="Abrir menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero__inner">
+        <h1 class="hero__title">Educação que forma o futuro.</h1>
+        <p class="hero__subtitle">Texto de apoio curto e impactante sobre a missão da escola.</p>
+        <a href="cursos.html" class="btn btn--primary">Conheça nossos cursos</a>
+      </div>
+    </section>
+
+    <section class="showcase" data-reveal>
+      <img src="assets/img/fachada.jpg" alt="Fachada da ETE Luiz Alves Lacerda" class="showcase__img">
+    </section>
+
+    <section class="section" id="destaques">
+      <div class="container">
+        <h2 class="section__title">Por que estudar aqui</h2>
+        <div class="grid grid--3">
+          <article class="card" data-reveal>
+            <h3>Diferencial 1</h3>
+            <p>Descrição breve.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3>Diferencial 2</h3>
+            <p>Descrição breve.</p>
+          </article>
+          <article class="card" data-reveal>
+            <h3>Diferencial 3</h3>
+            <p>Descrição breve.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="noticias-preview">
+      <div class="container">
+        <h2 class="section__title">Últimas notícias</h2>
+        <div class="grid grid--3" data-noticias-preview>
+          <!-- Cards de notícia virão aqui -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>&copy; <span data-year></span> ETE Luiz Alves Lacerda. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

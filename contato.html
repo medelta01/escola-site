@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.add('preload');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETE Luiz Alves Lacerda — Contato</title>
+  <meta name="description" content="Entre em contato com a ETE Luiz Alves Lacerda.">
+
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase-config.js" defer></script>
+  <script src="js/session.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body>
+
+  <header class="site-header" data-header>
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="ETE Luiz Alves Lacerda">
+      </a>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Início</a></li>
+          <li><a href="cursos.html" class="nav__link">Cursos</a></li>
+          <li><a href="noticias.html" class="nav__link">Notícias</a></li>
+          <li><a href="contato.html" class="nav__link is-active">Contato</a></li>
+          <li id="nav-admin" style="display:none"><a href="admin.html" class="nav__link">Painel</a></li>
+          <li id="nav-auth"><a href="login.html" class="nav__link">Entrar</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav__toggle" aria-label="Abrir menu" data-nav-toggle>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title">Fale Conosco</h1>
+        <p class="page-hero__subtitle">Dúvidas, sugestões ou interesse em nossos cursos? Envie uma mensagem.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-layout">
+
+        <form class="contact-form" novalidate data-reveal>
+          <div class="form-field">
+            <label for="nome">Nome completo</label>
+            <input type="text" id="nome" name="nome" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-field">
+            <label for="assunto">Assunto</label>
+            <input type="text" id="assunto" name="assunto" required>
+          </div>
+
+          <div class="form-field">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Enviar mensagem</button>
+        </form>
+
+        <div class="contact-info" data-reveal>
+          <div class="contact-info__item">
+            <h3>Endereço</h3>
+            <p>Endereço completo da escola.</p>
+          </div>
+          <div class="contact-info__item">
+            <h3>Telefone</h3>
+            <p>(00) 0000-0000</p>
+          </div>
+          <div class="contact-info__item">
+            <h3>E-mail</h3>
+            <p>contato@escola.com.br</p>
+          </div>
+          <div class="contact-info__item">
+            <h3>Horário de atendimento</h3>
+            <p>Segunda a sexta, 8h às 17h.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>&copy; <span data-year></span> ETE Luiz Alves Lacerda. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
