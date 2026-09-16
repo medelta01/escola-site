@@ -114,7 +114,6 @@ protegerPagina().then((session) => {
   if (session) carregarPendentes();
 });
 
-cat >> /home/claude/admin.js << 'ENDOFFILE'
 
 // ===== GERAR CONVITE DE GESTAO =====
 function gerarCodigoAleatorio() {

@@ -7,8 +7,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ETE Luiz Alves Lacerda — Painel</title>
-  <meta name="description" content="Painel de administração da ETE Luiz Alves Lacerda.">
+  <title>ETE Luiz Alves Lacerda — Gerenciar Notícias</title>
+  <meta name="description" content="Gerencie as notícias do site.">
 
   <link rel="icon" href="assets/img/favicon.png">
   <link rel="stylesheet" href="css/reset.css">
@@ -27,18 +27,16 @@
       <a href="index.html" class="logo">
         <img src="assets/img/logo.png" alt="ETE Luiz Alves Lacerda">
       </a>
-
       <nav class="nav" aria-label="Navegação principal">
         <ul class="nav__list">
           <li><a href="index.html" class="nav__link">Início</a></li>
           <li><a href="cursos.html" class="nav__link">Cursos</a></li>
           <li><a href="noticias.html" class="nav__link">Notícias</a></li>
           <li><a href="contato.html" class="nav__link">Contato</a></li>
-          <li id="nav-admin" style="display:none"><a href="admin.html" class="nav__link is-active">Painel</a></li>
+          <li id="nav-admin" style="display:none"><a href="admin.html" class="nav__link">Painel</a></li>
           <li id="nav-auth"><a href="login.html" class="nav__link">Entrar</a></li>
         </ul>
       </nav>
-
       <button class="nav__toggle" aria-label="Abrir menu" data-nav-toggle>
         <span></span><span></span><span></span>
       </button>
@@ -48,40 +46,57 @@
   <main>
     <section class="page-hero">
       <div class="container">
-        <h1 class="page-hero__title">Painel de Administração</h1>
-        <p class="page-hero__subtitle">Aprove ou rejeite cadastros de professores pendentes.</p>
-        <section class="section" style="padding-bottom: 0;">
-          <div class="container">
-            <div class="invite-box" data-reveal>
-        <section class="section" style="padding-top:0;">
-          <div class="container">
-            <a href="gerenciar-noticias.html" class="btn btn--ghost">Gerenciar Notícias</a>
-          </div>
-        </section>
-              <div class="invite-box__text">
-                <h3>Convite para Gestão</h3>
-                <p class="profile-username">Gere um código, envie pra pessoa, e ela usa na hora de criar a conta.</p>
-              </div>
-
-              <div class="invite-box__action">
-                <div id="convite-resultado" style="display:none;">
-                  <span id="convite-codigo"></span>
-                  <button class="btn btn--ghost" id="btn-copiar-convite">Copiar</button>
-                </div>
-                <button class="btn btn--primary" id="btn-gerar-convite">Gerar código</button>   
-              </div>
-            </div>
-        </section>
+        <h1 class="page-hero__title">Gerenciar Notícias</h1>
+        <p class="page-hero__subtitle">Crie, edite ou remova notícias do site.</p>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
 
-        <p class="auth-error" id="admin-erro"></p>
-        <p id="admin-vazio" style="display:none; opacity:0.6;">Nenhum cadastro de professor pendente no momento.</p>
+        <div class="profile-card" data-reveal style="max-width:100%; margin-bottom: var(--space-lg);">
+          <h3 id="form-titulo-secao">Nova notícia</h3>
 
-        <div id="lista-pendentes" class="pending-list"></div>
+          <form id="form-noticia" novalidate>
+            <input type="hidden" id="noticia-id">
+
+            <div class="form-field">
+              <label for="n-titulo">Título</label>
+              <input type="text" id="n-titulo" required>
+            </div>
+
+            <div class="form-field">
+              <label for="n-resumo">Resumo (aparece na listagem)</label>
+              <textarea id="n-resumo" rows="2" required></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="n-conteudo">Conteúdo completo</label>
+              <textarea id="n-conteudo" rows="8" required></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="n-imagem">Imagem (opcional)</label>
+              <input type="file" id="n-imagem" accept="image/*">
+            </div>
+
+            <div class="form-field">
+              <label for="n-video">Link de vídeo (opcional, ex: YouTube)</label>
+              <input type="url" id="n-video" placeholder="https://youtube.com/...">
+            </div>
+
+            <p class="auth-error" id="n-erro"></p>
+            <p class="auth-success" id="n-sucesso"></p>
+
+            <div class="profile-edit-actions">
+              <button type="button" class="btn btn--ghost" id="btn-cancelar-edicao" style="display:none;">cancelar edição</button>
+              <button type="submit" class="btn btn--primary" id="btn-salvar-noticia">Publicar</button>
+            </div>
+          </form>
+        </div>
+
+        <h2 class="section__title" style="text-align:left;">Notícias publicadas</h2>
+        <div id="lista-noticias" class="pending-list"></div>
 
       </div>
     </section>
@@ -93,7 +108,7 @@
     </div>
   </footer>
 
-  <script src="js/admin.js" defer></script>
+  <script src="js/gerenciar-noticias.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>
-</html> 
+</html>

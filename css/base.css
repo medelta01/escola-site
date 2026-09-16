@@ -88,7 +88,7 @@ p {
   transform: translateY(-2px);
 }
 
-/* ===== HERO (Home) ===== */
+/* hero home */
 .hero {
   min-height: 90vh;
   display: flex;
@@ -108,7 +108,7 @@ p {
   opacity: 0.8;
 }
 
-/* ===== HEADER ===== */
+/* header */
 .site-header {
   position: sticky;
   top: 0;
@@ -187,7 +187,7 @@ p {
   }
 }
 
-/* ===== FOOTER ===== */
+/* footer */
 .site-footer {
   padding-block: var(--space-lg);
   text-align: center;
@@ -212,7 +212,7 @@ p {
     gap: var(--space-sm);
   }
 }
-/* ===== PAGE HERO (páginas internas) ===== */
+/* page hero */
 .page-hero {
   padding-block: var(--space-lg) var(--space-md);
   background-color: var(--color-bg-alt);
@@ -227,7 +227,7 @@ p {
   opacity: 0.75;
 }
 
-/* ===== COURSE CARD ===== */
+/* course card */
 .course-card {
   background: var(--color-white);
   padding: var(--space-md);
@@ -267,7 +267,7 @@ p {
   font-size: var(--fs-small);
   color: var(--color-primary);
 }
-/* ===== NOTÍCIA EM DESTAQUE ===== */
+/* noticia destaque */
 .news-featured {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -290,7 +290,14 @@ p {
   opacity: 0.85;
 }
 
-/* ===== CARD DE NOTÍCIA ===== */
+/* card de noticia */
+
+.news-featured,
+.news-card {
+  display: grid;
+  color: inherit;
+}
+
 .news-card__image {
   aspect-ratio: 16 / 10;
   background-color: var(--color-bg-alt);
@@ -321,7 +328,7 @@ p {
     grid-template-columns: 1fr;
   }
 }
-/* ===== CONTATO ===== */
+/* contato */
 .contact-layout {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -391,12 +398,12 @@ p {
     grid-template-columns: 1fr;
   }
 }
-/* Esconde os elementos com data-reveal até o GSAP assumir a animação de entrada */
+/* esconder elementos */
 html.preload [data-reveal] {
   opacity: 0;
   transform: translateY(40px);
 }
-/* ===== SHOWCASE (foto institucional full-width) ===== */
+/* showcase foto */
 .showcase {
   width: 100%;
   height: 60vh;
@@ -409,7 +416,7 @@ html.preload [data-reveal] {
   object-fit: cover;
   object-position: center;
 }
-/* ===== PÁGINA DE LOGIN/CADASTRO ===== */
+/* pagina login/cadastro */
 .auth-section {
   min-height: 70vh;
   display: flex;
@@ -486,7 +493,7 @@ html.preload [data-reveal] {
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius);
 }
-/* ===== INDICADOR DE LOGIN NO MENU ===== */
+/* indicar login no menu */
 .nav__user {
   font-weight: 500;
   font-size: var(--fs-small);
@@ -498,7 +505,7 @@ html.preload [data-reveal] {
   font-weight: 600;
   color: var(--color-accent-terracotta);
 }
-/* ===== PÁGINA DE PERFIL ===== */
+/* pagina do perfil */
 .profile-card {
   max-width: 480px;
   margin-inline: auto;
@@ -516,7 +523,7 @@ html.preload [data-reveal] {
   gap: var(--space-sm);
   text-align: left;
 }
-/* ===== ÍCONE DE AVATAR NO MENU ===== */
+/* avatar icon no menu */
 .nav__user {
   display: flex;
   align-items: center;
@@ -532,7 +539,7 @@ html.preload [data-reveal] {
   object-fit: cover;
 }
 
-/* ===== PÁGINA DE PERFIL (visualização) ===== */
+/* pagina de perfil view */
 .profile-avatar--clickable {
   cursor: pointer;
   transition: opacity var(--duration-fast) var(--ease-smooth);
@@ -566,7 +573,7 @@ html.preload [data-reveal] {
   background: var(--color-bg-alt);
 }
 
-/* ===== LIGHTBOX DA FOTO ===== */
+/* lightbox foto */
 .avatar-lightbox {
   display: none;
   position: fixed;
@@ -611,7 +618,7 @@ html.preload [data-reveal] {
   text-align: center;
 }
 
-/* ===== CABEÇALHO DO PERFIL (foto + nome + badge + usuário) ===== */
+/* cabeçalho perfil */
 .profile-header {
   display: flex;
   align-items: center;
@@ -623,7 +630,7 @@ html.preload [data-reveal] {
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
-  min-width: 0; /* permite que o texto encolha em vez de estourar a largura */
+  min-width: 0;
 }
 
 .profile-header__meta {
@@ -654,7 +661,6 @@ html.preload [data-reveal] {
   line-height: 1;
 }
 
-/* No celular: foto menor, pra sobrar espaço pro nome/badge não cortarem */
 @media (max-width: 480px) {
   .profile-avatar {
     width: 80px;
@@ -672,7 +678,7 @@ html.preload [data-reveal] {
   }
 }
 
-/* ===== PAINEL - LISTA DE PENDENTES ===== */
+/* painel pendentes */
 .pending-list {
   display: flex;
   flex-direction: column;
@@ -724,4 +730,56 @@ html.preload [data-reveal] {
   .pending-card {
     flex-wrap: wrap;
   }
+}
+
+.invite-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  background: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(10, 42, 102, 0.06);
+  margin-bottom: var(--space-lg);
+}
+
+.invite-box__text {
+  flex: 1;
+  min-width: 220px;
+}
+
+.invite-box__text h3 {
+  margin-bottom: var(--space-xs);
+}
+
+.invite-box__action {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+#convite-resultado {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+#convite-codigo {
+  font-family: monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: var(--color-bg-alt);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius);
+  letter-spacing: 0.05em;
+}
+
+.noticias-filtros {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
 }

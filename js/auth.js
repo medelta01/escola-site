@@ -65,6 +65,7 @@ formCadastro.addEventListener('submit', async (e) => {
   const email = document.getElementById('cad-email').value.trim();
   const senha = document.getElementById('cad-senha').value;
   const confirmar = document.getElementById('cad-confirmar').value;
+  const codigoConvite = document.getElementById('cad-convite').value.trim();
 
   if (senha !== confirmar) {
     cadastroErro.textContent = 'As senhas não conferem.';
@@ -78,7 +79,8 @@ formCadastro.addEventListener('submit', async (e) => {
       data: {
         username: username,
         apelido: apelido,
-        tipo: tipo // 'aluno' ou 'professor' — o banco de dados também trava isso, por segurança
+        tipo: tipo,
+        codigo_convite: codigoConvite
       }
     }
   });
